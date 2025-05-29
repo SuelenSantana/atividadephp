@@ -23,7 +23,14 @@ if($_POST){
     }
     // Atualizar Pet
     elseif(isset($_POST['update_pet'])){
-        // Código aqui
+     $pet->id = $_POST['id'];
+        $pet->name = $_POST['name'];
+        $pet->species = $_POST['species'];
+        $pet->breed = $_POST['breed'];
+        $pet->birth_date = $_POST['birth_date'];
+        $pet->owner_name = $_POST['owner_name'];
+        $pet->owner_phone = $_POST['owner_phone'];
+        $pet->update();
     }
     // Excluir Pet
     elseif(isset($_POST['delete_pet'])){
@@ -32,8 +39,12 @@ if($_POST){
     }
     // Cadastrar Procedimento
     elseif(isset($_POST['add_procedure'])){
-       // Código aqui
-    }
+   $procedure->pet_id = $_POST['pet_id'];  // Presumo que associe ao Pet
+        $procedure->procedure_name = $_POST['procedure_name'];
+        $procedure->procedure_date = $_POST['procedure_date'];
+        $procedure->description = $_POST['description'];
+        $procedure->veterinarian = $_POST['veterinarian'];
+        $procedure->create();
     // Atualizar Procedimento
     elseif(isset($_POST['update_procedure'])){
         $procedure->id = $_POST['procedure_id'];
@@ -45,7 +56,8 @@ if($_POST){
     }
     // Excluir Procedimento
     elseif(isset($_POST['delete_procedure'])){
-        // Código aqui
+$procedure->id = $_POST['procedure_id'];
+        $procedure->delete();
     }
 }
 
