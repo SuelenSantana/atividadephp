@@ -1,8 +1,8 @@
 <?php
 class Database {
     private $host = 'localhost';
-    private $db_name = 'clinica';
-    private $username = 'clinicaveterinaria';
+    private $db_name = 'vet_clinic';
+    private $username = 'root';
     private $password = '';
     public $conn;
 
