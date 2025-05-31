@@ -51,7 +51,6 @@ class Pet {
         $stmt->execute();
         return $stmt;
     }
-
     public function update() {
         $query = "UPDATE " . $this->table . " 
                   SET name = :name,
